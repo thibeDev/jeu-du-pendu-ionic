@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Dictionnaire
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">
+          Ajouter un mot au dictionnaire
+        </ion-label>
+        <ion-input type="texte" [(ngModel)]="newWord" required></ion-input><br>
+      </ion-item>
+      <ion-button expand="block" color="primary" (click)="onAddWord()" >OK</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Dictionaire
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let word of dictionary">{{ word }}<ion-icon name="trash" color="danger" slot="end" (click)="onDelete(word)"></ion-icon></ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
