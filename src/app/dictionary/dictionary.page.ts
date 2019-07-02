@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DictionaryService} from '../services/dictionary.service';
 import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dictionary',
@@ -12,7 +13,7 @@ export class DictionaryPage implements OnInit {
     dictionary;
     dictionarySubsribtion: Subscription;
 
-  constructor(private dictionaryService: DictionaryService) { }
+  constructor(private dictionaryService: DictionaryService, private router: Router) { }
 
   ngOnInit() {
     this.dictionarySubsribtion = this.dictionaryService.dictionarySubject.subscribe((dictionary)=> {
@@ -33,5 +34,9 @@ export class DictionaryPage implements OnInit {
 
   onDelete(word: string) {
     this.dictionaryService.removeWord(word);
+  }
+
+  onSelectWord(word: any) {
+    this.router.navigateByUrl('menu/new-game/' + word);
   }
 }

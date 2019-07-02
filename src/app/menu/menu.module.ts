@@ -13,8 +13,9 @@ const routes: Routes = [
     component: MenuPage,
     children: [
       { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
-      { path: 'game', loadChildren: '../new-game/new-game.module#NewGamePageModule' },
-      { path: 'game/:word', loadChildren: '../new-game/new-game.module#NewGamePageModule' },
+      { path: 'game/:word', loadChildren: '../game/game.module#GamePageModule' },
+      { path: 'new-game/:word', loadChildren: '../new-game/new-game.module#NewGamePageModule' },
+      { path: 'new-game', loadChildren: '../new-game/new-game.module#NewGamePageModule' },
       { path: 'dictionary', loadChildren: '../dictionary/dictionary.module#DictionaryPageModule' },
     ]
   },

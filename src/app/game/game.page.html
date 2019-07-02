@@ -9,7 +9,33 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
+  <ion-card *ngIf="result != undefined">
+    <ion-item *ngIf="result == true" color="success" text-center>
+      <ion-label>
+        Gagné!!
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="result == false" color="danger" text-center>
+      <ion-label>
+        Perdu :(
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item text-center>
+      <ion-label>{{ lifes }}</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item text-center>
+      <ion-label>
+        <span *ngFor="let x of hidedWord">{{ x }} </span>
+      </ion-label>
 
+    </ion-item>
+  </ion-card>
+  <ion-card text-center>
+    <ion-button *ngFor="let x of alphabet" (click)="onClickLetter(x)">{{ x }}</ion-button>
+  </ion-card>
 </ion-content>

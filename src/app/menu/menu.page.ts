@@ -16,11 +16,11 @@ export class MenuPage implements OnInit {
     },
     {
       title: 'Jeu',
-      url: '/menu/game',
+      url: '/menu/new-game',
       icon:'basketball'
     },
     {
-      title: 'Dictionaire',
+      title: 'Dictionnaire',
       url: '/menu/dictionary',
       icon:'clipboard'
     }
