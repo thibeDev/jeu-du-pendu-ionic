@@ -18,14 +18,13 @@
     </ion-item>
     <ion-item *ngIf="result == false" color="danger" text-center>
       <ion-label>
-        Perdu :(
+        Perdu :( <br>
+        Le mot secret était {{ word }}
       </ion-label>
     </ion-item>
   </ion-card>
   <ion-card>
-    <ion-item text-center>
-      <ion-label>{{ lifes }}</ion-label>
-    </ion-item>
+    <ion-img src="assets/images/piou_{{ lifes }}.jpg" style="height: 250px"></ion-img>
   </ion-card>
   <ion-card>
     <ion-item text-center>
@@ -36,6 +35,6 @@
     </ion-item>
   </ion-card>
   <ion-card text-center>
-    <ion-button *ngFor="let x of alphabet" (click)="onClickLetter(x)">{{ x }}</ion-button>
+    <ion-button *ngFor="let x of alphabet" [color]="checkWrongLetter(x) ? 'danger' : 'primary'" (click)="onClickLetter(x)">{{  x }}</ion-button>
   </ion-card>
 </ion-content>
