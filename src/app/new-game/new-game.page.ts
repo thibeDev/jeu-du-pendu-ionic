@@ -28,8 +28,12 @@ export class NewGamePage implements OnInit {
   }
 
   onStartGame(word: string) {
-    if(word)
-      this.router.navigateByUrl('menu/game/' + word);
+    if (word){
+      if (this.dictionaryService.checkIfWordExists(word)) {
+        this.dictionaryService.addWord(word);
+      }
+    this.router.navigateByUrl('menu/game/' + word);
+    }
     else{
       Swal.fire(
           'Erreur!',

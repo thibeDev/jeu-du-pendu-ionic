@@ -35,6 +35,6 @@
     </ion-item>
   </ion-card>
   <ion-card text-center>
-    <ion-button *ngFor="let x of alphabet" [color]="checkWrongLetter(x) ? 'danger' : 'primary'" (click)="onClickLetter(x)">{{  x }}</ion-button>
+    <ion-button *ngFor="let x of alphabet" color="{{ x.color }}" (click)="onClickLetter(x)">{{  x.letter }}</ion-button>
   </ion-card>
 </ion-content>
